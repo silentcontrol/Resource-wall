@@ -6,7 +6,6 @@ const router = express.Router();
 module.exports = (knex) => {
   const db = require('../db/dbHelpers')(knex);
 
-  // if no query string, redirect to the home page, else render search page with results
   // router.get("/", async (req, res) => {
   //   const resources = await db.getAllResources();
   //   res.json(resources);
@@ -24,15 +23,15 @@ module.exports = (knex) => {
     res.render("newpost", data);
   });
 
-  
   // submit the create resource form
   router.post("/new", async (req, res) => {
     const url = req.body.url;
     const title = req.body.title;
     const description = req.body.description;
     const userId = req.session.userId;
-
-    await db.createResource(url, title, description, userId);
+    const topicId = req.body.topic;
+    
+    await db.createResource(url, title, description, userId, topicId);
     res.redirect("/");
   });
 
