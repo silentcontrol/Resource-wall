@@ -1,0 +1,8 @@
+html, body {
+  height:100%;
+}
+body {
+  display:flex;
+  align-items:center;
+  background-image: linear-gradient(to right top, #7394b5, #7e98b2, #899daf, #94a1ad, #9fa5aa);
+}
