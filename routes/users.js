@@ -18,30 +18,30 @@ module.exports = (knex) => {
     res.render("profile", data);
   });
 
-  // // update user profile
-  // router.put("/:id", async (req, res) => {
-  //   const userId = req.params.id;
-  //   const userName = req.body.username;
-  //   const bio = req.body.bio;
+  // update user profile
+  router.put("/:id", async (req, res) => {
+    const userId = req.params.id;
+    const userName = req.body.username;
+    const bio = req.body.bio;
 
-  //   await updateProfile(userId, userName, bio);
-  //   const profile = await db.getProfile(userId);
-  //   res.render("profile", profile);
-  // });
+    await updateProfile(userId, userName, bio);
+    const profile = await db.getProfile(userId);
+    res.render("profile", profile);
+  });
 
-  // // display all resources created by userid = id
-  // router.get("/:id/resources", async (req, res) => {
-  //   const userId = req.params.id;
-  //   const resource = await db.getMyResources(userId);
-  //   res.render("resource", resource);
-  // });
+  // display all resources created by userid = id
+  router.get("/:id/resources", async (req, res) => {
+    const userId = req.params.id;
+    const resource = await db.getMyResources(userId);
+    res.render("resource", resource);
+  });
 
-  // // display all likes created by userid = id
-  // router.get("/:id/likes", async (req, res) => {
-  //   const userId = req.params.id;
-  //   const likes = await db.getMyLikes(userId);
-  //   res.render("resource", likes);
-  // });
+  // display all likes created by userid = id
+  router.get("/:id/likes", async (req, res) => {
+    const userId = req.params.id;
+    const likes = await db.getMyLikes(userId);
+    res.render("resource", likes);
+  });
 
   return router;
 }
