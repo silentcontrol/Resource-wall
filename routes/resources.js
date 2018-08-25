@@ -24,6 +24,7 @@ module.exports = (knex) => {
     res.render("newpost", data);
   });
 
+  
   // submit the create resource form
   router.post("/new", async (req, res) => {
     const url = req.body.url;
