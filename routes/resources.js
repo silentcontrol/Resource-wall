@@ -6,51 +6,10 @@ const router = express.Router();
 module.exports = (knex) => {
   const db = require('../db/dbHelpers')(knex);
 
-
-  // if no query string, redirect to the home page, else render search page with results
-
-  // router.get("/", async (req, res) => {
-  //   const resources = await db.getAllResources();
-  //   res.json(resources);
-  // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  router.get("/", async (req, res) => {
+    const resources = await db.getAllResources();
+    res.json(resources);
+  });
 
   // render the create resource page
   router.get("/new", async (req, res) => {
@@ -77,9 +36,6 @@ module.exports = (knex) => {
     const topicId = req.body.topic;
 
     await db.createResource(url, title, description, userId, topicId);
-
-
-
 
     res.redirect("/");
   });
