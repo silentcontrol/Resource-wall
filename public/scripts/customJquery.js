@@ -48,6 +48,13 @@ $('body').on('click','.commentSubmit', function(e) {
       $(this).closest('.post').find(".star4").addClass('fillStar');
       $(this).closest('.post').find(".star5").removeClass('fillStar');
     }
+    else if($(this).hasClass('star5')){
+      $(this).closest('.post').find(".star1").addClass('fillStar');
+      $(this).closest('.post').find(".star2").addClass('fillStar');
+      $(this).closest('.post').find(".star3").addClass('fillStar');
+      $(this).closest('.post').find(".star4").addClass('fillStar');
+      $(this).closest('.post').find(".star5").addClass('fillStar');
+    }
   })
 
 

@@ -18,4 +18,5 @@ module.exports = (knex) => {
     res.render("index", data);
   });
   return router;
+}
 

@@ -182,11 +182,11 @@ module.exports = function makeDataHelpers(knex) {
       return await
       knex('likes').insert({
         user_id,
-<<<<<<< HEAD
+
         resource_id,
-=======
+
         resource_id
->>>>>>> 8ce0a55731fe99ba139b5545c1d9fe9ecba2c899
+
       });
     },
 
@@ -195,11 +195,11 @@ module.exports = function makeDataHelpers(knex) {
       knex('likes')
       .where('user_id', user_id)
       .andWhere('resource_id', resource_id)
-<<<<<<< HEAD
+
       .del()
-=======
+
       .del();
->>>>>>> 8ce0a55731fe99ba139b5545c1d9fe9ecba2c899
+
     },
 
     ratingExists: async (user_id, resource_id) => {
@@ -229,28 +229,28 @@ module.exports = function makeDataHelpers(knex) {
     },
 
     updateAverageRating: async (resource_id) => {
-<<<<<<< HEAD
-=======
+
+
       let avg;
->>>>>>> 8ce0a55731fe99ba139b5545c1d9fe9ecba2c899
+
       return await
       knex('ratings').avg('stars')
       .where('resource_id', resource_id)
       .then((result) => {return result[0].avg})
       .then(async (avg_rating) => {
-<<<<<<< HEAD
+
         return await
         knex('resources')
         .where('id', resource_id)
         .update({average_rating: avg_rating});
-=======
+
         avg = avg_rating;
         return await
         knex('resources')
         .where('id', resource_id)
         .update({average_rating: avg_rating})
         .then((result) => {return avg});
->>>>>>> 8ce0a55731fe99ba139b5545c1d9fe9ecba2c899
+
       })
     }
 
