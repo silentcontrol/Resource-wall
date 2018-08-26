@@ -182,7 +182,7 @@ module.exports = function makeDataHelpers(knex) {
       return await
       knex('likes').insert({
         user_id,
-        resource_id,
+        resource_id
       });
     },
 
@@ -191,7 +191,7 @@ module.exports = function makeDataHelpers(knex) {
       knex('likes')
       .where('user_id', user_id)
       .andWhere('resource_id', resource_id)
-      .del()
+      .del();
     },
 
     ratingExists: async (user_id, resource_id) => {
@@ -221,15 +221,18 @@ module.exports = function makeDataHelpers(knex) {
     },
 
     updateAverageRating: async (resource_id) => {
+      let avg;
       return await
       knex('ratings').avg('stars')
       .where('resource_id', resource_id)
       .then((result) => {return result[0].avg})
       .then(async (avg_rating) => {
+        avg = avg_rating;
         return await
         knex('resources')
         .where('id', resource_id)
-        .update({average_rating: avg_rating});
+        .update({average_rating: avg_rating})
+        .then((result) => {return avg});
       })
     }
 

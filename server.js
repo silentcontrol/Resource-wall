@@ -23,6 +23,7 @@ const resourcesRoutes = require("./routes/resources");
 const usersRoutes = require("./routes/users");
 const searchRoutes = require("./routes/search");
 const likesRoutes = require("./routes/likes");
+const ratingsRoutes = require("./routes/ratings");
 
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -52,6 +53,7 @@ app.use("/resources", resourcesRoutes(knex));
 app.use("/users", usersRoutes(knex));
 app.use("/search", searchRoutes(knex));
 app.use("/likes", likesRoutes(knex));
+app.use("/ratings", ratingsRoutes(knex));
 
 
 app.listen(PORT, () => {
