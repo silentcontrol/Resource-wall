@@ -6,14 +6,51 @@ const router = express.Router();
 module.exports = (knex) => {
   const db = require('../db/dbHelpers')(knex);
 
-<<<<<<< HEAD
+
   // if no query string, redirect to the home page, else render search page with results
-=======
->>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
+
   // router.get("/", async (req, res) => {
   //   const resources = await db.getAllResources();
   //   res.json(resources);
   // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // render the create resource page
   router.get("/new", async (req, res) => {
@@ -23,28 +60,27 @@ module.exports = (knex) => {
     if (data.userId !== undefined) {
       const userProfile = await db.getProfile(req.session.userId);
       data.userName = userProfile.username;
-    } 
+    }
     res.render("newpost", data);
   });
 
-<<<<<<< HEAD
-  
-=======
->>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
   // submit the create resource form
   router.post("/new", async (req, res) => {
     const url = req.body.url;
     const title = req.body.title;
     const description = req.body.description;
     const userId = req.session.userId;
-<<<<<<< HEAD
+
 
     await db.createResource(url, title, description, userId);
-=======
+
     const topicId = req.body.topic;
-    
+
     await db.createResource(url, title, description, userId, topicId);
->>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
+
+
+
+
     res.redirect("/");
   });
 
