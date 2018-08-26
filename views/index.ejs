@@ -1,114 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <% include ./partials/head %>
-</head>
-
-<body>
-  <% include ./partials/header %>
-
-  <main id="post-container" role="main" class="container">
-    <div dbId='1' class="jumbotron">
-      <h1 class="display-4">Title</h1>
-      <p class="lead">url</p>
-      <p class="lead">username</p>
-      <hr class="my-4">
-      <p>Description</p>
-      <a class="btn btn-outline-primary" href="#" role="button">Comments</a>
-      <a class="btn btn-outline-primary" href="#" role="button">Add topic</a>
-      <h4 class="media-heading">User Jan 20, 2018</h4>
-      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit,
-        dolore aliqua non est magna in labore pig pork biltong.</p>
-      <hr class="my-4">
-
-      <div class="form-group">
-        <label for="exampleTextarea">Write some comments</label>
-        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-      </div>
-
-      <a class="btn btn-primary" href="#" role="button">Submit</a>
-
-
-      <div class="form-group">
-        <label for="exampleInputEmail1">Add some topics</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      </div>
-
-      <a class="btn btn-primary" href="#" role="button">Submit</a>
-
-
-
-      <form action="" method="post"><i class="far fa-heart like-button" bloop="1"></i></form>
-      <form action="" method="post"><i class="far fa-heart like-button" bloop="2"></i></form>
-      <form action="" method="post"><i class="far fa-heart like-button" bloop="3"></i></form>
-      <form action="" method="post"><i class="far fa-heart like-button" bloop="4"></i></form>
-      <form action="" method="post"><i class="far fa-heart like-button" bloop="5"></i></form>
-      <form action="" method="post">
-        <i class="far fa-star" rating="1"></i>
-        <i class="far fa-star" rating="2"></i>
-        <i class="far fa-star" rating="3"></i>
-        <i class="far fa-star" rating="4"></i>
-        <i class="far fa-star" rating="5"></i>
-        <p>average rating: 3 stars</p>
-      </form>
-    </div>
-
-    <div dbId='2' class="jumbotron">
-      <h1 class="display-4">Title</h1>
-      <p class="lead">url</p>
-      <p class="lead">username</p>
-      <hr class="my-4">
-      <p>Description</p>
-      <a class="btn btn-outline-primary" href="#" role="button">Comments</a>
-      <a class="btn btn-outline-primary" href="#" role="button">Add topic</a>
-      <h4 class="media-heading">User Jan 20, 2018</h4>
-      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit,
-        dolore aliqua non est magna in labore pig pork biltong.</p>
-      <hr class="my-4">
-
-      <div class="form-group">
-        <label for="exampleTextarea">Write some comments</label>
-        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-      </div>
-
-      <a class="btn btn-primary" href="#" role="button">Submit</a>
-
-
-      <div class="form-group">
-        <label for="exampleInputEmail1">Add some topics</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      </div>
-
-      <a class="btn btn-primary" href="#" role="button">Submit</a>
-
-
-
-      <form action="" method="post"><i class="far fa-heart like-button" bloop="1"></i></form>
-      <form action="" method="post"><i class="far fa-heart like-button" bloop="2"></i></form>
-      <form action="" method="post"><i class="far fa-heart like-button" bloop="3"></i></form>
-      <form action="" method="post"><i class="far fa-heart like-button" bloop="4"></i></form>
-      <form action="" method="post"><i class="far fa-heart like-button" bloop="5"></i></form>
-      <form action="" method="post">
-        <i class="far fa-star" rating="1"></i>
-        <i class="far fa-star" rating="2"></i>
-        <i class="far fa-star" rating="3"></i>
-        <i class="far fa-star" rating="4"></i>
-        <i class="far fa-star" rating="5"></i>
-        <p>average rating: 3 stars</p>
-      </form>
-    </div>
-  </main>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  <head>
+    <meta charset="UTF-8">
+    <title>ResWall</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Concert+One|Montserrat" rel="stylesheet">
+    <!-- jq -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <script type="text/javascript" src="/scripts/like-button.js"></script>
-  <script type="text/javascript" src="/scripts/star-ratings.js"></script>
-</body>
+    <!-- custom style sheet -->
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+  </head>
 
+  <body>
+    <% include ./partials/header %>
+      <main>
+      <div class="wrapper">
+        <!-- post container begins -->
+        <div class="postContainer">
+          <!-- post template -->
+          <!--container body ends -->
+        </div>
+      </div>
+    </main>
+    <footer>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/customJquery.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/scripts/like-button.js"></script>
+    <script type="text/javascript" src="/scripts/star-ratings.js"></script>
+
+  </body>
 </html>
