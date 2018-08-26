@@ -19,7 +19,7 @@ module.exports = (knex) => {
     if (data.userId !== undefined) {
       const userProfile = await db.getProfile(req.session.userId);
       data.userName = userProfile.username;
-    }
+    } 
     res.render("newpost", data);
   });
 
@@ -29,14 +29,9 @@ module.exports = (knex) => {
     const title = req.body.title;
     const description = req.body.description;
     const userId = req.session.userId;
-
-
-    await db.createResource(url, title, description, userId);
-
     const topicId = req.body.topic;
-
+    
     await db.createResource(url, title, description, userId, topicId);
-
     res.redirect("/");
   });
 

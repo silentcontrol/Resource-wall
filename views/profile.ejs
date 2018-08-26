@@ -9,77 +9,15 @@
   <% include ./partials/header %>
     <main role="main" class="container">
       <div class="userHeader clearfix">
-      <h3 class="bioName">placeholder</h3>
-      <div class="bio">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit mollitia quod laudantium dolor voluptatum hic modi facilis in non ullam provident, ipsa sequi architecto officia voluptate adipisci sapiente voluptas, molestiae nam veniam odit, nulla quidem blanditiis? Alias minima veniam, quaerat.</p>
+        <h3 class="bioName"><%= userName %></h3>
+        <div class="bio">
+          <p><%= bio%></p>
+        </div>
       </div>
-    </div>
 
-      <div class="row my-2">
+        
         <div class="container">
           <div class="row h-100 justify-content-center align-items-center">
-
-            <div class="col-lg-8 order-lg-2">
-              <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Posts</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Likes</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Topics</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Profile</a>
-                </li>
-              </ul>
-              <div class="tab-content py-4">
-
-            <h2>My posts</h2>
-            <table class="table table-hover">
-              <tbody id="posts">
-                <% for(var i = 0; i < myPosts.length; i++) { %>
-                  <tr>
-                    <td class="number text-center">
-                      <%= i+1 %>
-                    </td>
-                    <td class="result">
-                      <strong><%= myPosts[i].title %></strong>
-                      <br><%= myPosts[i].url %>
-                        <br><%= myPosts[i].created_at %>
-                          <br>Average rating: <%= myPosts[i].average_rating %>
-                    </td>
-                    <td class="price text-right">Created by:
-                      <%= myPosts[i].user_name %>
-                    </td>
-                  </tr>
-                  <% } %>
-              </tbody>
-            </table>
-
-            <h2>My likes</h2>
-            <table class="table table-hover">
-              <tbody id="likes">
-                <% for(var i = 0; i < myLikes.length; i++) { %>
-                  <tr>
-                    <td class="number text-center">
-                      <%= i+1 %>
-                    </td>
-                    <td class="result">
-                      <strong><%= myLikes[i].title %></strong>
-                      <br><%= myLikes[i].url %>
-                        <br><%= myLikes[i].created_at %>
-                          <br>Average rating: <%= myLikes[i].average_rating %>
-                    </td>
-                    <td class="price text-right">Created by:
-                      <%= myLikes[i].user_name %>
-                    </td>
-                  </tr>
-                  <% } %>
-              </tbody>
-            </table>
-
             <div class="container">
               <h2>Update profile</h2>
               <div class="tab-pane" id="profile">
@@ -100,59 +38,12 @@
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
                       <input type="submit" class="btn btn-primary" value="Save Changes">
-                <div class="tab-pane" id="messages">
-                  <table class="table table-hover">
-                    <tbody>
-                      <tr>
-                        <td class="number text-center">1</td>
-                        <td class="product">
-                          <strong>Title</strong>
-                          <br>Url
-                          <br>topic
-                          <br>description
-                        </td>
-                        <td class="price text-right">User</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="tab-pane" id="edit">
-                  <form role="form">
-                    <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">Email</label>
-                      <div class="col-lg-9">
-                        <input class="form-control" type="text" value="Jane">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">Username</label>
-                      <div class="col-lg-9">
-                        <input class="form-control" type="email" value="email@gmail.com">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label" for="exampleTextarea">Bio</label>
-                      <div class="col-lg-9">
-                        <textarea class="form-control" id="exampleTextarea" rows="5"></textarea>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label"></label>
-                      <div class="col-lg-9">
-                        <input type="button" class="btn btn-primary" value="Save Changes">
-                        <input type="reset" class="btn btn-secondary" value="Cancel">
-                      </div>
-                    </div>
-                  </div>
                 </form>
+                </div>
+                </div>
               </div>
             </div>
-
-          </div>
         </div>
-      </div>
-      </div>
       </div>
     </main>
 

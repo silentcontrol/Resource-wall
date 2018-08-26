@@ -20,14 +20,12 @@ module.exports = (knex) => {
   });
 
   // update user profile
-  router.put("/:id", async (req, res) => {
+  router.post("/:id", async (req, res) => {
     const userId = req.params.id;
-    const userName = req.body.username;
     const bio = req.body.bio;
 
-    await updateProfile(userId, userName, bio);
-    const profile = await db.getProfile(userId);
-    res.render("profile", profile);
+    await db.updateProfile(userId, bio);
+    res.redirect("profile")
   });
 
   // display all resources created by userid = id
