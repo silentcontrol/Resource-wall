@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ./partials/head %>
+</head>
+
+<body>
+  <% include ./partials/header %>
+
+    <main role="main" class="wrapper" >
+      <div class=" newform ">
+        <div class="justify-content-center align-items-center">
+          <form class="" action="/resources/new" method="post">
+            <h2 class="text-center">Create post</h2>
+
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" name="title" class="form-control" placeholder="Enter title">
+            </div>
+
+            <div class="form-group">
+              <label for="url">Url</label>
+              <input type="url" name="url" class="form-control" value="http://">
+            </div>
+
+            <div class="form-group">
+              <label for="topic">Topics</label>
+              <select multiple class="form-control" name="topic">
+                <option value="1">Coding</option>
+                <option value="2">Design</option>
+                <option value="3">Arts</option>
+                <option value="4">Food</option>
+                <option value="5">Engineering</option>
+                <option value="6">Writing</option>
+                <option value="7">Photography</option>
+                <option value="8">Sports</option>
+                <option value="9">Health</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" name="description" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create post</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
