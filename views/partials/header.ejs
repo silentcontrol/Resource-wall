@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-md fixed-top bg-dar">
+=======
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
   <a class="navbar-brand" href="/"><i class="far fa-bookmark fa-lg"></i></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -6,17 +10,29 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+<<<<<<< HEAD
   <%if (userId === undefined) { %>
+=======
+  <% if (userId === undefined) { %>
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <form action="/register" method="get">
+<<<<<<< HEAD
             <button type="submit" class="btn">Register</button>
+=======
+            <button type="submit" class="btn btn-outline-success">Register</button>
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
           </form>
         </li>
         <li class="nav-item">
           <form action="/login" method="get">
+<<<<<<< HEAD
             <button type="submit" class="btn">Login</button>
+=======
+            <button type="submit" class="btn btn-outline-success">Login</button>
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
           </form>
         </li>
       </ul>
@@ -26,17 +42,29 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <form action="/logout" method="post">
+<<<<<<< HEAD
               <button type="submit" class="btn">Logout</button>
+=======
+              <button type="submit" class="btn btn-outline-success">Logout</button>
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
             </form>
           </li>
           <li class="nav-item">
             <form action="/users/<%= userId %>" method="get">
+<<<<<<< HEAD
               <button type="submit" class="btn">My Profile</button>
+=======
+              <button type="submit" class="btn btn-outline-success">My Profile</button>
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
             </form>
           </li>
           <li class="nav-item">
             <form action="/resources/new" method="get">
+<<<<<<< HEAD
               <button type="submit" class="btn">Post</button>
+=======
+              <button type="submit" class="btn btn-outline-success">Post</button>
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
             </form>
           </li>
           <li>
@@ -47,6 +75,10 @@
       <% } %>
         <form class="form-inline mt-2 mt-md-0" for="query" action="/search" method="get">
           <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search">
+<<<<<<< HEAD
           <button class="btn my-2 my-sm-0" type="submit">Search</button>
+=======
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
         </form>
 </nav>

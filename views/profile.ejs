@@ -8,12 +8,15 @@
 <body>
   <% include ./partials/header %>
     <main role="main" class="container">
+<<<<<<< HEAD
       <div class="userHeader clearfix">
       <h3 class="bioName">placeholder</h3>
       <div class="bio">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit mollitia quod laudantium dolor voluptatum hic modi facilis in non ullam provident, ipsa sequi architecto officia voluptate adipisci sapiente voluptas, molestiae nam veniam odit, nulla quidem blanditiis? Alias minima veniam, quaerat.</p>
       </div>
     </div>
+=======
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
 
       <div class="row my-2">
         <div class="container h-100 login">
@@ -27,9 +30,12 @@
                   <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Likes</a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                   <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Topics</a>
                 </li>
                 <li class="nav-item">
+=======
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
                   <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Profile</a>
                 </li>
               </ul>
@@ -71,6 +77,7 @@
                 </div>
 
                 <div class="tab-pane" id="edit">
+<<<<<<< HEAD
                   <form role="form">
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Email</label>
@@ -88,13 +95,30 @@
                       <label class="col-lg-3 col-form-label form-control-label" for="exampleTextarea">Bio</label>
                       <div class="col-lg-9">
                         <textarea class="form-control" id="exampleTextarea" rows="5"></textarea>
+=======
+                  <form action="/users/<%= userId %>" method="post">
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                      <div class="col-lg-9">
+                        <input class="form-control" type="text" value="<%= userName %>" readonly>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label" for="bio">Bio</label>
+                      <div class="col-lg-9">
+                        <textarea class="form-control" rows="5" name="bio"><%= bio%></textarea>
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
                       </div>
                     </div>
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label"></label>
                       <div class="col-lg-9">
+<<<<<<< HEAD
                         <input type="button" class="btn btn-primary" value="Save Changes">
                         <input type="reset" class="btn btn-secondary" value="Cancel">
+=======
+                        <input type="submit" class="btn btn-primary" value="Save Changes">
+>>>>>>> 8bcdaf75c3e3cb065be26e28e7fd4f4a1400da41
                       </div>
                     </div>
                   </form>
