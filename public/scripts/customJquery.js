@@ -18,6 +18,7 @@ $('body').on('click','.commentSubmit', function(e) {
 
 
 
+
   $('body').on('click', '.fa-star', function () {
     if($(this).hasClass('star1')){
       $(this).closest('.post').find(".star1").addClass('fillStar');
@@ -48,4 +49,8 @@ $('body').on('click','.commentSubmit', function(e) {
       $(this).closest('.post').find(".star5").removeClass('fillStar');
     }
   })
+
+
+// code sourced from https://codepen.io/neilpomerleau/pen/wzxzQr
+// logs status of star rating
 
