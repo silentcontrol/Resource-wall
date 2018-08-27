@@ -17,7 +17,8 @@ module.exports = (knex) => {
       
       let userId = resources[post].user_id;
       let topicId = resources[post].topic_id;
-      let comments = await db.getComments(topicId);
+      let resourceId = resources[post].id;
+      let comments = await db.getComments(resourceId);
 
       for (let comment of comments) {
         let userProfile = await db.getProfile(comment.user_id);

@@ -51,10 +51,12 @@ function createPost(resource) {
 </div>
   `)
 
-  for (var i = 0; i < resource.comments.length; i++) {
+  if (resource.comments.length > 0) {
+    for (var i = 0; i < resource.comments.length; i++) {
     let userName = `<h4>${resource.comments[i].user_name}</h4>`;
     let msg = `<p>${resource.comments[i].message}</p>`;
     $postTemplate.find('.comment').append(userName, msg);
+    }
   }
 
   return $postTemplate;
@@ -67,7 +69,7 @@ function renderPosts(resources) {
 }
 
 function loadPosts() {
-  $.get("/users/1/likes", (resources) => {
+  $.get("/resources", (resources) => {
     renderPosts(resources);
   })
 }
