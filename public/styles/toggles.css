@@ -1,0 +1,25 @@
+/*Like button (heart)*/
+.fa-heart.liked {
+  color: red; }
+
+.fa-heart:hover {
+  color: red; }
+
+/*Rating Stars*/
+.fa-star {
+  color: black; }
+
+.fa-star.filled {
+  color: red; }
+
+.post.rated .fa-star.filled {
+  color: #f2ed6a; }
+
+.post.rated .fa-star.filled.black {
+  color: black; }
+
+.fa-star.gold {
+  color: #f2ed6a; }
+
+.fa-star.black {
+  color: black; }
