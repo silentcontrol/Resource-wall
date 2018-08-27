@@ -20,8 +20,6 @@ module.exports = (knex) => {
       let resultUserProfile = await db.getProfile(serachResult[i].user_id);
       serachResult[i].user_name = resultUserProfile.username;
     }
-    console.log(data);
-
     res.render("search", data);
   });
 
