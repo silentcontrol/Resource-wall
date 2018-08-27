@@ -1,7 +1,6 @@
 $(document).ready( () => {
   console.log("like script being loaded");
   $('#postContainer').on('click', '.fa-heart', function () {
-    alert('you clicked a star');
     $like = $(this);
     console.log('hasClass(liked)', $like.hasClass('liked'));
     if ($like.hasClass('liked')) {

@@ -16,11 +16,11 @@ module.exports = (knex) => {
       console.log('create userid', userId);
       console.log('create resourceid', resourceId);
       await db.createRating(stars, userId, resourceId);
-      const p = await db.updateAverageRating(resourceId);
-      console.log('p', p);
-      res.json({'newAverage': p});
-      // res.append('newAverage', p);
-      // res.end();
+      const newAverage = (await db.getAverageRating(resourceId)).toFixed(1);
+      await db.updateAverageRating(newAverage, resourceId);
+      console.log(typeof newAverage);
+      res.json({newAverage});
+
     } else {
       console.log('not logged in');
       res.render('login');
@@ -37,10 +37,10 @@ module.exports = (knex) => {
       console.log('create userid', userId);
       console.log('create resourceid', resourceId);
       await db.updateRating(stars, userId, resourceId);
-      const p = await db.updateAverageRating(resourceId);
-      console.log('p', p);
-      res.json({'newAverage': p});
-      // res.end();
+      const newAverage = (await db.getAverageRating(resourceId)).toFixed(1);
+      await db.updateAverageRating(newAverage, resourceId);
+      console.log(typeof newAverage);
+      res.json({newAverage});
     } else {
       console.log('not logged in');
       res.render('login');
