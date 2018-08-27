@@ -1,5 +1,5 @@
 function createPost(resource) {
-  const postTemplate = `
+  const $postTemplate = $(`
   <div class="post">
   <h3 class="postTitle">${resource.title}</h3>
   <!-- img preview -->
@@ -25,7 +25,7 @@ function createPost(resource) {
 </div>
 <div class="postContent">
   
-  <p>Created at: ${resource.created_at} <br>
+  <p>Created on: ${resource.created_at} <br>
     Created by: ${resource.user_name} <br>
     Topic: ${resource.topic} </p>
     <p> ${resource.description}</p>
@@ -37,21 +37,27 @@ function createPost(resource) {
   </div>
   <div class="commentContainer">
     <div class="commentForm">
-      <form method="POST" action="id:/comment" class="commentBox">
+      <form method="post" action="resources/${resource.id}/comment" class="commentBox">
         <small> Comment box</small>
-        <textarea class="commentInput" name="" id="" cols="30" rows="10"></textarea>
+        <textarea class="commentInput" name="message" cols="30" rows="10"></textarea>
         <button type="submit" class="btn btn-primary commentSubmit">submit comment</button>
       </form>
     </div>
     <div class="comment">
-      <h4>username</h4>
-      <p class="commentText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto natus perferendis neque quibusdam consectetur earum voluptatibus quia suscipit nulla ipsum sapiente praesentium cum ad veritatis nemo tempore eos mollitia, aliquam, libero sequi blanditiis unde adipisci ratione ipsam reprehenderit. Sed, recusandae.</p>
+      
     </div>
   </div>
 </div>
 </div>
-  `
-  return postTemplate;
+  `)
+
+  for (var i = 0; i < resource.comments.length; i++) {
+    let userName = `<h4>${resource.comments[i].user_name}</h4>`;
+    let msg = `<p>${resource.comments[i].message}</p>`;
+    $postTemplate.find('.comment').append(userName, msg);
+  }
+
+  return $postTemplate;
 };
 
 function renderPosts(resources) {

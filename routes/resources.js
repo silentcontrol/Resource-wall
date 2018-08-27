@@ -14,8 +14,17 @@ module.exports = (knex) => {
       let day = resources[post].created_at.getDate();
       let year = resources[post].created_at.getFullYear();
       resources[post].created_at = `${month}/${day}/${year}`;
+      
       let userId = resources[post].user_id;
       let topicId = resources[post].topic_id;
+      let comments = await db.getComments(topicId);
+
+      for (let comment of comments) {
+        let userProfile = await db.getProfile(comment.user_id);
+        comment.user_name = userProfile.username;
+      };
+
+      resources[post].comments = comments;
       let userProfile = await db.getProfile(userId);
       resources[post].user_name = userProfile.username;
       switch (topicId) {
@@ -48,13 +57,12 @@ module.exports = (knex) => {
             break;
         default:
         resources[post].topic = "";
+      }
     }
-    }
-
     res.json(resources);
   });
 
-  // render the create resource page
+  // render the create post page
   router.get("/new", async (req, res) => {
     const data = {}
     data.userId = req.session.userId;
@@ -66,33 +74,27 @@ module.exports = (knex) => {
     res.render("newpost", data);
   });
 
-  // submit the create resource form
+  // submit the create post form
   router.post("/new", async (req, res) => {
     const url = req.body.url;
     const title = req.body.title;
     const description = req.body.description;
     const userId = req.session.userId;
     const topicId = req.body.topic;
-    
+        
     await db.createResource(url, title, description, userId, topicId);
     res.redirect("/");
   });
 
-  // display all comments
-  router.get("/:id/comments", async (req, res) => {
-    const resourceId = req.params.id;
-    const comments = await db.getComments(resourceId);
-    res.render("index", comments);
-  });
-
   // submit comment
-  router.post("/:id/comments", async (req, res) => {
+  router.post("/:id/comment", async (req, res) => {
+
     const resourceId = req.params.id;
     const userId = req.session.userId;
     const message = req.body.message;
+
     await db.createComment(message, userId, resourceId);
-    const comments = await db.getComments(resourceId);
-    res.render("index", comments);
+    res.redirect("/");
   });
 
   router.post("/:id/like", async (req, res) => {
