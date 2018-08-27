@@ -67,11 +67,11 @@ function renderPosts(resources) {
 }
 
 function loadPosts() {
-  $.get("/resources", (resources) => {
+  $.get("/users/1/likes", (resources) => {
     renderPosts(resources);
   })
 }
 
-$(document).ready(function () {  
+$(document).ready(function () { 
   loadPosts();
 });
