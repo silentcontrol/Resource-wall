@@ -13,7 +13,7 @@ function createPost(resource) {
   <!-- /image preview -->
   <!-- radio know star code from  https://codepen.io/neilpomerleau/pen/wzxzQr -->
   <div class="postLikes clearfix">
-  <form action="" method="post" class='rating '>
+  <form action="" method="post" class='rating'>
     <i class="fas fa-star ${resource.starFills[0]}" rating="1"></i>
     <i class="fas fa-star ${resource.starFills[1]}" rating="2"></i>
     <i class="fas fa-star ${resource.starFills[2]}" rating="3"></i>
@@ -24,7 +24,6 @@ function createPost(resource) {
   <form action="" method="post" class='like'><i class="fas fa-heart ${resource.liked}"></i></i></form>
 </div>
 <div class="postContent">
-
   <p>Created at: ${resource.created_at} <br>
     Created by: ${resource.user_name} <br>
     Topic: ${resource.topic} </p>

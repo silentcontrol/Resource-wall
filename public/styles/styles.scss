@@ -348,4 +348,40 @@ h1, h2, h3, h4, h5{
   margin-top: 150px;
   padding: 0 ;
   max-width: 600px;
+
 }
+
+.fa-heart:hover{
+  color:red;
+}
+.fa-star{
+  color: black;
+}
+.fa-star:hover{
+  color:rgb(242, 237, 106);
+}
+
+.fillStar{
+  color:rgb(242, 237, 106);
+}
+
+.fillStar:hover{
+  color:black;
+}
+
+
+
+.liked{
+  color:red;
+}
+
+.navbar-toggler{
+  width:40px;
+  height:40px;
+  background-color: $mainRed;
+  color:white;
+}
+
+
+
+
