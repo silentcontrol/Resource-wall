@@ -203,6 +203,15 @@ module.exports = function makeDataHelpers(knex) {
       .then((result) => {return result[0].count === '1'});
     },
 
+    getRating: async (user_id, resource_id) => {
+      return await
+      knex.select('stars')
+      .from('ratings')
+      .where('user_id', user_id)
+      .andWhere('resource_id', resource_id)
+      .then((result) => {return result[0].stars});
+    },
+
     createRating: async (stars, user_id, resource_id) => {
       return await
       knex('ratings').insert({
