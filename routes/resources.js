@@ -58,7 +58,35 @@ module.exports = (knex) => {
         default:
         resources[post].topic = "";
       }
+
+      //setting variables to inject into class declarations in ejs
+      let starFills = ['','','','',''];
+      if (req.session.userId && await db.ratingExists(req.session.userId, resources[post].id)) {
+        const rating = await db.getRating(req.session.userId, resources[post].id);
+        for (let i = 0; i < starFills.length; i++) {
+          if (i <= rating -1) {
+            starFills[i] = 'filled';
+          }
+        }
+        resources[post].rated = 'rated';
+      } else {
+        const roundedRating = Math.round(resources[post].average_rating);
+        for (let i = 0; i < starFills.length; i++) {
+          if (i <= roundedRating -1) {
+            starFills[i] = 'filled';
+          }
+        }
+        resources[post].rated = '';
+      }
+      resources[post].starFills = starFills;
+
+      if (req.session.userId && await db.likeExists(req.session.userId, resources[post].id)) {
+        resources[post].liked = 'liked';
+      } else {
+        resources[post].liked = '';
+      }
     }
+
     res.json(resources);
   });
 
@@ -70,7 +98,7 @@ module.exports = (knex) => {
     if (data.userId !== undefined) {
       const userProfile = await db.getProfile(req.session.userId);
       data.userName = userProfile.username;
-    } 
+    }
     res.render("newpost", data);
   });
 
@@ -81,7 +109,11 @@ module.exports = (knex) => {
     const description = req.body.description;
     const userId = req.session.userId;
     const topicId = req.body.topic;
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> ed75d662853ced5a62e79ae9d69800c5f4bfb447
     await db.createResource(url, title, description, userId, topicId);
     res.redirect("/");
   });

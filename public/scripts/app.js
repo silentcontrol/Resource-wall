@@ -1,6 +1,6 @@
 function createPost(resource) {
   const $postTemplate = $(`
-  <div class="post">
+  <div class="post ${resource.rated}" dbId=${resource.id} >
   <h3 class="postTitle">${resource.title}</h3>
   <!-- img preview -->
   <a href="${resource.url}">
@@ -13,15 +13,15 @@ function createPost(resource) {
   <!-- /image preview -->
   <!-- radio know star code from  https://codepen.io/neilpomerleau/pen/wzxzQr -->
   <div class="postLikes clearfix">
-  <form action="" method="post" class='rating '>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
+  <form action="" method="post" class='rating'>
+    <i class="fas fa-star ${resource.starFills[0]}" rating="1"></i>
+    <i class="fas fa-star ${resource.starFills[1]}" rating="2"></i>
+    <i class="fas fa-star ${resource.starFills[2]}" rating="3"></i>
+    <i class="fas fa-star ${resource.starFills[3]}" rating="4"></i>
+    <i class="fas fa-star ${resource.starFills[4]}" rating="5"></i>
     <small>average rating: ${resource.average_rating}</small>
   </form>
-  <form action="" method="post" class='like'><i class="fas fa-heart"></i></i></form>
+  <form action="" method="post" class='like'><i class="fas fa-heart ${resource.liked}"></i></i></form>
 </div>
 <div class="postContent">
   
@@ -62,7 +62,7 @@ function createPost(resource) {
 
 function renderPosts(resources) {
   resources.forEach(resource => {
-    $('.postContainer').append(createPost(resource));
+    $('#postContainer').append(createPost(resource));
   });
 }
 

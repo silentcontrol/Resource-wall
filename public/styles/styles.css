@@ -479,3 +479,27 @@ h1, h2, h3, h4, h5 {
   margin-top: 150px;
   padding: 0;
   max-width: 600px; }
+
+.fa-heart:hover {
+  color: red; }
+
+.fa-star {
+  color: black; }
+
+.fa-star:hover {
+  color: #f2ed6a; }
+
+.fillStar {
+  color: #f2ed6a; }
+
+.fillStar:hover {
+  color: black; }
+
+.liked {
+  color: red; }
+
+.navbar-toggler {
+  width: 40px;
+  height: 40px;
+  background-color: #ff3641;
+  color: white; }
