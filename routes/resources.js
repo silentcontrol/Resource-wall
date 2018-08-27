@@ -109,11 +109,6 @@ module.exports = (knex) => {
     const description = req.body.description;
     const userId = req.session.userId;
     const topicId = req.body.topic;
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> ed75d662853ced5a62e79ae9d69800c5f4bfb447
     await db.createResource(url, title, description, userId, topicId);
     res.redirect("/");
   });

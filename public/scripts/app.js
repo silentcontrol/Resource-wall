@@ -72,6 +72,6 @@ function loadPosts() {
   })
 }
 
-$(document).ready(function () {
+$(document).ready(function () {  
   loadPosts();
 });
