@@ -483,11 +483,17 @@ h1, h2, h3, h4, h5 {
 .fa-heart:hover {
   color: red; }
 
+.fa-star {
+  color: black; }
+
 .fa-star:hover {
   color: #f2ed6a; }
 
 .fillStar {
   color: #f2ed6a; }
+
+.fillStar:hover {
+  color: black; }
 
 .liked {
   color: red; }
