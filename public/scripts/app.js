@@ -58,7 +58,6 @@ function createPost(resource) {
     $postTemplate.find('.comment').append(userName, msg);
     }
   }
-
   return $postTemplate;
 };
 
@@ -74,6 +73,6 @@ function loadPosts() {
   })
 }
 
-$(document).ready(function () { 
+$(document).ready(function () {
   loadPosts();
 });

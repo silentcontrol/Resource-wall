@@ -125,29 +125,5 @@ module.exports = (knex) => {
     res.redirect("/");
   });
 
-  router.post("/:id/like", async (req, res) => {
-    const userId = req.session.userId;
-    const resourceId = req.params.id;
-    if (await db.likeExists(userId, resourceId)) {
-      await db.deleteLike(userId, resourceId);
-    } else {
-      await db.createLike(userId, resourceId);
-    }
-    res.redirect("index");
-  });
-
-  router.post("/:id/rate", async (req, res) => {
-    const userId = req.session.userId;
-    const resourceId = req.params.id;
-    const stars = req.body.stars;
-    if (await db.ratingExists(userId, resourceId)) {
-      await db.updateRating(stars, userId, resourceId);
-    } else {
-      await db.createRating(stars, userId, resourceId);
-    }
-    await db.updateAverageRating(resourceId);
-    res.redirect("index");
-  });
-
   return router;
 }
