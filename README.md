@@ -1,7 +1,7 @@
 # Resource wall
 Pinterest for learners.
 
-Resource wall allow learners to save learning resources like tutorials, blogs and videos in a central place that is publicly available to any user.
+Resource wall allows learners to save learning resources like tutorials, blogs, and videos in a central place that is publicly available to any user.
 
 Built with Bootstrap and jQuery on the front-end, and Node, Express and PostgreSQL on the back-end.
 
