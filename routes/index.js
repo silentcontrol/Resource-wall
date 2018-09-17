@@ -14,10 +14,10 @@ module.exports = (knex) => {
     if (data.userId !== undefined) {
       const userProfile = await db.getProfile(req.session.userId);
       data.userName = userProfile.username;
-      res.render("index", data);
     }
 
-    res.render("login", data);
+    res.render("index", data);
+
   });
   return router;
 }
