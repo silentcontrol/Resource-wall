@@ -48,16 +48,4 @@ $(document).ready( () => {
       $(this).prevAll().removeClass('gold');
       $(this).nextUntil('small').removeClass('black');
   });
-
-  // $('#postContainer .fa-star').hover(
-  //   function () {
-  //     $(this).addClass('gold');
-  //     $(this).prevAll().addClass('gold');
-  //     $(this).nextUntil('small').addClass('black');
-  //   },
-  //   function () {
-  //     $(this).removeClass('gold');
-  //     $(this).prevAll().removeClass('gold');
-  //     $(this).nextUntil('small').removeClass('black');
-  //   }
 })

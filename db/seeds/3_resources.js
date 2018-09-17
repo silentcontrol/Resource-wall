@@ -3,36 +3,36 @@ exports.seed = function(knex, Promise) {
   return Promise.all([
     knex('resources').insert({
       id: 1,
-      url: 'https://www.starwars.com/databank/darth-vader',
-      title: 'About me',
-      description: 'Once a heroic Jedi Knight, Darth Vader was seduced by the dark side of the Force.',
+      url: 'https://loremflickr.com/320/240/dog',
+      title: 'Statistics about or related to coordination',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       user_id: 3,
       topic_id: 6,
       average_rating: 3.5
     }),
     knex('resources').insert({
       id: 2,
-      url: 'https://www.maralagoclub.com/',
-      title: 'Mar-a-Lago fee',
-      description: 'My private resort membership fee doubled to $200,000 since I became president, hahahaha',
+      url: 'https://loremflickr.com/320/240/dog',
+      title: 'Research about or related to coordination',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       user_id: 1,
       topic_id: 6,
       average_rating: 5
     }),
     knex('resources').insert({
       id: 3,
-      url: 'https://vignette.wikia.nocookie.net/familyguy/images/8/8b/FGuy_Brian_Gen2012_R3Flat.jpg/revision/latest?cb=20120905115633',
-      title: 'I hate Brian',
-      description: 'Brian is a failure as a father and never sees his son',
+      url: 'https://loremflickr.com/320/240/dog',
+      title: 'Personal experience with or involving coordination',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       user_id: 2,
       topic_id: 2,
       average_rating: 4.5
     }),
     knex('resources').insert({
       id: 4,
-      url: 'https://i.ytimg.com/vi/80wqyrjIXQc/hqdefault.jpg',
-      title: 'Fake news',
-      description: 'I found a fake news website',
+      url: 'https://loremflickr.com/320/240/dog',
+      title: 'Growth or decline of popularity of DVD players',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       user_id: 1,
       topic_id: 3,
       average_rating: 3

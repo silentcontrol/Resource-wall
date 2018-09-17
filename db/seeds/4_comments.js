@@ -3,7 +3,7 @@ exports.seed = function(knex, Promise) {
   return Promise.all([
     knex('comments').insert({
       id: 1,
-      message: "I am the best president",
+      message: "I am the Homer",
       user_id: 1,
       resource_id: 1,
     }),
@@ -27,7 +27,7 @@ exports.seed = function(knex, Promise) {
     }),
     knex('comments').insert({
       id: 5,
-      message: "The beauty of me is that I’m very rich",
+      message: "Hello World",
       user_id: 1,
       resource_id: 3,
     }),
