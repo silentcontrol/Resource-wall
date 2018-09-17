@@ -6,22 +6,22 @@ Resource wall allow learners to save learning resources like tutorials, blogs an
 Built with Bootstrap and jQuery on the front-end, and Node, Express and PostgreSQL on the back-end.
 
 ## Final Product
-!["home"](https://github.com/silentcontrol/tweeter/blob/master/docs/main.png?raw=true)
-!["comment"](https://github.com/silentcontrol/tweeter/blob/master/docs/error.png?raw=true)
-!["post"](https://github.com/silentcontrol/tweeter/blob/master/docs/error.png?raw=true)
-!["likes"](https://github.com/silentcontrol/tweeter/blob/master/docs/error.png?raw=true)
+!["home"](https://github.com/silentcontrol/Resource-wall/blob/master/docs/home.png?raw=true)
+!["comment"](https://github.com/silentcontrol/Resource-wall/blob/master/docs/comment.png?raw=true)
+!["post"](https://github.com/silentcontrol/Resource-wall/blob/master/docs/post.png?raw=true)
+!["likes"](https://github.com/silentcontrol/Resource-wall/blob/master/docs/likes.png?raw=true)
 
 ## Dependencies
-Node.js
-bcryptjs
-body-parser
-cookie-session
-ejs
-express
-knex
-knex-logger
-morgan
-pg
+- Node.js
+- bcryptjs
+- body-parser
+- cookie-session
+- ejs
+- express
+- knex
+- knex-logger
+- morgan
+- pg
 
 ## Getting Started
 1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
